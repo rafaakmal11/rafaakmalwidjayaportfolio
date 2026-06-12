@@ -569,33 +569,35 @@ h1, h2, h3, h4, h5, h6 {
 /* Certifications */
 .cert-image {
     width: 100%;
-    height: auto;
+    height: 220px;
+    object-fit: cover;
     border-radius: 12px;
     margin-bottom: 15px;
-    object-fit: cover;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
 
 .cert-card {
-    max-width: 500px;
+    padding: 2rem;
     text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 }
 
 .cert-grid {
-    display: flex;
-    justify-content: center;
-}
-
-.cert-card {
-    padding: 3rem 2rem;
-    text-align: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .cert-card:hover {
     transform: translateY(-8px);
     border-color: rgba(56, 189, 248, 0.3);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cert-card:hover .cert-image {
+    transform: scale(1.03);
 }
 
 .cert-icon {
